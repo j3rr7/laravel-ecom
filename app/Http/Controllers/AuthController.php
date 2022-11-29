@@ -27,10 +27,9 @@ class AuthController extends Controller
     {
         $credentials = $request->getCredentials();
         
-        if(!Auth::validate($credentials))
-        {
+        if(!Auth::validate($credentials)) {
             return redirect()->to('login')
-            ->withErrors(trans('auth.failed'));
+                ->withErrors(trans('auth.failed'));
         }
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
         Auth::login($user);
@@ -74,14 +73,16 @@ class AuthController extends Controller
             $user = User::where('email', $socialUser->getEmail())->first();
 
             if (!$user) {
-                $user = User::create([
+                $user = User::create(
+                    [
                     'name'  => $socialUser->getName(),
                     'username' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
                     'provider_id' => $provider,
                     'address' => "0",
                     'phone_number' => "0",
-                ]);
+                    ]
+                );
             }
 
             return $user;

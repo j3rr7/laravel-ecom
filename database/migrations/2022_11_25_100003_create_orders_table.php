@@ -13,17 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('invoice')->unique();
-            $table->string('user_id');
+        Schema::create(
+            'orders', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('invoice')->unique();
+                $table->string('user_id');
 
-            $table->string('user_name');
-            $table->string('user_phone');
-            $table->string('user_address');
-            $table->integer('subtotal');
-            $table->timestamps();
-        });
+                $table->string('user_name');
+                $table->string('user_phone');
+                $table->string('user_address');
+                $table->integer('subtotal');
+                $table->timestamps();
+            }
+        );
     }
 
     /**
