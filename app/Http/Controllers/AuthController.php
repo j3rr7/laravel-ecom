@@ -26,8 +26,8 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = $request->getCredentials();
-        
-        if(!Auth::validate($credentials)) {
+
+        if (!Auth::validate($credentials)) {
             return redirect()->to('login')
                 ->withErrors(trans('auth.failed'));
         }
@@ -49,7 +49,6 @@ class AuthController extends Controller
     public function handleProvideCallback($provider)
     {
         try {
-
             $user = Socialite::driver($provider)->stateless()->user();
         } catch (Exception $e) {
             return redirect()->back();
@@ -88,5 +87,4 @@ class AuthController extends Controller
             return $user;
         }
     }
-
 }
