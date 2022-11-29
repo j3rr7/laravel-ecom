@@ -61,9 +61,9 @@
                                             <span class="account__login--divide__text">OR</span>
                                         </div>
                                         <div class="account__social d-flex justify-content-center mb-15">
-                                            <a class="account__social--link facebook" target="_blank" href="https://www.facebook.com">Facebook</a>
-                                            <a class="account__social--link google" target="_blank" href="https://www.google.com">Google</a>
-                                            <a class="account__social--link twitter" target="_blank" href="https://twitter.com">Twitter</a>
+                                            <a class="account__social--link facebook" target="_blank" href="/auth/facebook">Facebook</a>
+                                            <a class="account__social--link google" target="_blank" href="/auth/google">Google</a>
+                                            <a class="account__social--link twitter" target="_blank" href="/auth/twitter">Twitter</a>
                                         </div>
                                     </div>
                                 </div>

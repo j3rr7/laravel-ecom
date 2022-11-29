@@ -19,8 +19,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/shop', [HomeController::class, 'shop'])->name('home.shop');
 Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 
-Route::get('/auth/{provider}', [HomeController::class, 'redirectToProvider']);
-Route::get('/auth/{provider}/callback', [HomeController::class, 'handleProvideCallback']);
+Route::get('/auth/{provider}', [AuthController::class, 'redirectToProvider']);
+Route::get('/auth/{provider}/callback', [AuthController::class, 'handleProvideCallback']);
 
 Route::group(['middleware' => ['guest']], function() {
     Route::get('/login', [AuthController::class, 'show'])->name('login.show');
