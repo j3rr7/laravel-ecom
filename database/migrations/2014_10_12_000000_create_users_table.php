@@ -13,20 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('username');
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('phone_number');
-            $table->string('address');
-            $table->string('password');
-            $table->string('provider_id')->nullable();
-            $table->boolean('is_vendor')->default(false);
-            $table->rememberToken();
-            $table->timestamps();
-        });
+        Schema::create(
+            'users', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('username');
+                $table->string('name')->nullable();
+                $table->string('email')->unique();
+                $table->timestamp('email_verified_at')->nullable();
+                $table->string('phone_number');
+                $table->string('address');
+                $table->string('password');
+                $table->string('provider_id')->nullable();
+                $table->boolean('is_vendor')->default(false);
+                $table->rememberToken();
+                $table->timestamps();
+            }
+        );
     }
 
     /**
