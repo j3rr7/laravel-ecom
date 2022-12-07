@@ -8,7 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home/index');
+        $categories = \App\Models\Category::all();
+        return view('home/index', [
+            "categories" => $categories
+            ]);
     }
 
     public function shop()
