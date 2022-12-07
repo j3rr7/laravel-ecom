@@ -97,7 +97,7 @@
                                             @endif
                                         </label>
                                         <label>
-                                            <input class="account__login--input" placeholder="Confirm Password" type="password">
+                                            <input class="account__login--input" placeholder="Confirm Password" type="password_confirmation">
                                             @if ($errors->has('password_confirmation'))
                                             <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
                                             @endif
