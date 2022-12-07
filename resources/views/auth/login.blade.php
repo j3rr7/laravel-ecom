@@ -48,9 +48,9 @@
                                         </label>
                                         <div class="account__login--remember__forgot mb-15 d-flex justify-content-between align-items-center">
                                             <div class="account__login--remember position__relative">
-                                                <input class="checkout__checkbox--input" id="check1" type="checkbox">
+                                                <input class="checkout__checkbox--input" id="check_remember" type="checkbox" name="check_remember">
                                                 <span class="checkout__checkbox--checkmark"></span>
-                                                <label class="checkout__checkbox--label login__remember--label" for="check1">
+                                                <label class="checkout__checkbox--label login__remember--label" for="check_remember">
                                                     Remember me</label>
                                             </div>
                                             <button class="account__login--forgot"  type="submit">Forgot Your Password?</button>
@@ -97,15 +97,15 @@
                                             @endif
                                         </label>
                                         <label>
-                                            <input class="account__login--input" placeholder="Confirm Password" type="password_confirmation">
+                                            <input class="account__login--input" placeholder="Confirm Password" type="password" name="password_confirmation">
                                             @if ($errors->has('password_confirmation'))
                                             <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
                                             @endif
                                         </label>
                                         <div class="account__login--remember position__relative">
-                                            <input class="checkout__checkbox--input" id="check2" type="checkbox">
+                                            <input class="checkout__checkbox--input" id="check_agreement" type="checkbox" name="check_agreement">
                                             <span class="checkout__checkbox--checkmark"></span>
-                                            <label class="checkout__checkbox--label login__remember--label" for="check2">
+                                            <label class="checkout__checkbox--label login__remember--label" for="check_agreement">
                                                 I have read and agree to the terms & conditions</label>
                                         </div>
                                         <button class="account__login--btn primary__btn mb-10" type="submit">Submit & Register</button>

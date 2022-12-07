@@ -16,8 +16,15 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $product_name = fake()->numerify('Category-####');
         return [
-            //
+            "name" => $product_name,
+            "category_id" => fake()->randomDigitNotNull(),
+            "slug" => $product_name, 
+            "description" => fake()->sentence(20),
+            "image" => fake()->imageUrl(640, 480, 'animals', true),
+            "price" => fake()->numberBetween(200000, 10000000),
+            "weight" => fake()->numberBetween(3, 12),
         ];
     }
 }

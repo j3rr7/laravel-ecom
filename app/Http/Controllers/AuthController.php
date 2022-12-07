@@ -30,7 +30,7 @@ class AuthController extends Controller
             return redirect('login')->withErrors(trans('auth.failed'));
         }
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
-        Auth::login($user);
+        Auth::login($user, $request->get('check_remember'));
         return $this->authenticated($request, $user);
     }
 
