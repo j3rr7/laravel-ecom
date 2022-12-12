@@ -16,7 +16,7 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $product_name = fake()->numerify('Category-####');
+        $product_name = fake()->numerify('Product-####');
         return [
             "name" => $product_name,
             "category_id" => fake()->randomDigitNotNull(),

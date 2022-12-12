@@ -507,6 +507,8 @@
 
   <!-- Customscript js -->
   <script src="assets/js/script.js"></script>
+
+  @yield('script_content')
   
 </body>
 </html>
