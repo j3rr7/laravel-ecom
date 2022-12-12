@@ -9,14 +9,21 @@ class HomeController extends Controller
     public function index()
     {
         $categories = \App\Models\Category::all();
-        return view('home/index', [
-            "categories" => $categories
-            ]);
+        return view('home/index')
+            ->with('categories', $categories)
+        ;
     }
 
-    public function shop()
+    public function shop(Request $request)
     {
-        return view('home/shop');
+        $page = is_null($request->query('page')) ? 1 : $request->query('page');
+        $categories = \App\Models\Category::all();
+        $products = \App\Models\Product::offset(0)->limit(20)->get();
+        return view('home/shop')
+            ->with('page', $page)
+            ->with('categories', $categories)
+            ->with('products', $products)
+        ;
     }
 
     public function contact()
